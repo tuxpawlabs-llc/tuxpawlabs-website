@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ - TuxPaw Labs</title>
+<meta name="description" content="Frequently asked questions about the EU Compliance Kit Shopify app: guarantee labels, GPSR safety information, the withdrawal function, setup, and plans.">
+<link rel="icon" href="assets/tuxpaw-favicon.ico">
+<link rel="apple-touch-icon" href="assets/tuxpaw-icon-192.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  article h3 { font-weight: 600; color: var(--midnight); margin: 1.1rem 0 0.35rem; font-size: 1.02rem; }
+  .toc { background: #fff; border: 1px solid rgba(23, 42, 56, 0.08); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 1.5rem; }
+  .toc p { font-weight: 600; color: var(--midnight); margin-bottom: 0.5rem; }
+  .toc ul { list-style: none; padding-left: 0; margin: 0; }
+  .toc li { margin-bottom: 0.35rem; }
+  .faq-section { margin-top: 2.4rem; padding-top: 0.2rem; border-top: 1px solid rgba(23, 42, 56, 0.08); }
+  .faq-section:first-of-type { border-top: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><img src="assets/tuxpaw-primary-horizontal-dark.png" alt="TuxPaw Labs"></a>
+    <nav>
+      <a href="faq.html">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+<main>
+<article>
+<h1>Frequently asked questions</h1>
+<p class="meta">EU Compliance Kit for Shopify &middot; this page is not legal advice</p>
+
+<div class="toc">
+<p>Jump to a section</p>
+<ul>
+  <li><a href="#about">About the app</a></li>
+  <li><a href="#setup">Setup</a></li>
+  <li><a href="#labels">Guarantee labels</a></li>
+  <li><a href="#gpsr">Product safety (GPSR)</a></li>
+  <li><a href="#withdrawal">The withdrawal function</a></li>
+  <li><a href="#plans">Plans</a></li>
+  <li><a href="#data">Data and privacy</a></li>
+  <li><a href="#help">Getting help</a></li>
+</ul>
+</div>
+
+<section class="faq-section" id="about">
+<h2>About the app</h2>
+
+<h3>What does EU Compliance Kit do?</h3>
+<p>It is a Shopify app that helps merchants display the EU-required information their storefront needs: the harmonised guarantee label and notice, GPSR product safety information, and the EU withdrawal function. It renders that information from your product data and profiles, and it gives shoppers a way to submit a withdrawal declaration.</p>
+
+<h3>Is this legal advice?</h3>
+<p>No. EU Compliance Kit is a display and workflow tool. It is not legal advice, and installing or configuring it does not by itself guarantee compliance with any law. You remain responsible for the accuracy of the information you configure and for your own legal obligations.</p>
+
+<h3>Which EU rules does it cover?</h3>
+<p>Three instruments:</p>
+<ul>
+<li>The harmonised guarantee label and notice under Commission Implementing Regulation (EU) 2025/1960, which applies from 27 September 2026.</li>
+<li>Product safety information under Regulation (EU) 2023/988 (the General Product Safety Regulation, GPSR), in particular its Article 19 distance-sales listing duties.</li>
+<li>The withdrawal function under Article 11a of the Consumer Rights Directive 2011/83/EU, as amended.</li>
+</ul>
+<p>The three have different dates. The harmonised notice and label both apply from 27 September 2026. The GPSR listing duties have applied since 13 December 2024. The withdrawal function applies to distance contracts from 19 June 2026, under a separate instrument.</p>
+
+<h3>Does it work for shops outside the EU?</h3>
+<p>The app is about what your storefront shows to EU consumers, not about where your business is registered. Most blocks render the same way regardless of shopper location. The one exception is the guarantee label's coverage line: if you scope a guarantee to specific countries rather than the whole EU, the app checks the shopper's detected storefront country against that list before showing a coverage claim.</p>
+</section>
+
+<section class="faq-section" id="setup">
+<h2>Setup</h2>
+
+<h3>How do I set it up?</h3>
+<p>The dashboard walks you through a five-step checklist: choose your modules, create your first profile, assign it to products, add the blocks in your theme editor, and view the result on your store.</p>
+
+<h3>Where does the storefront content come from?</h3>
+<p>From the Shopify theme editor. Once your profiles are assigned to products, add the blocks you want in the theme editor: Guarantee label, Legal guarantee notice, Repairability, and Product safety (GPSR) as blocks on the product page, plus Withdrawal link as an app embed.</p>
+
+<h3>Will it slow my storefront down?</h3>
+<p>The storefront blocks are plain Liquid, served through Shopify's theme app extensions. The app adds no JavaScript to your storefront.</p>
+
+<h3>What is a profile, and why assign it to products?</h3>
+<p>A profile (guarantee or safety) is a reusable set of information you fill in once and assign to as many products as you like. Assigning is bulk: you are not re-entering the same manufacturer or guarantee details product by product. Editing a profile later re-syncs every product it is assigned to, so the storefront stays current automatically.</p>
+</section>
+
+<section class="faq-section" id="labels">
+<h2>Guarantee labels</h2>
+
+<h3>What does the harmonised label look like and what is in it?</h3>
+<p>It follows the fixed model set out in Annex II of Regulation (EU) 2025/1960: a title, a "Brand/Trademark" and "Model identifier" field, the duration in years, a calendar symbol, and a QR code, plus a strip carrying "producer guarantee in years" in all 24 official EU languages. The QR code points to the European Commission's Your Europe page on the commercial guarantee of durability. Only three fields are ever editable per product: the duration, the producer name, and the model identifier. Everything else is fixed artwork.</p>
+
+<h3>Why is my label not showing on the product page?</h3>
+<p>The label only renders once a set of conditions on the guarantee profile are all satisfied, among them: a guarantee duration of more than two years entered in whole years, the producer name and model identifier filled in, the profile's attestation confirmed, and the product falling within the coverage you set. The profile form also asks you to confirm the guarantee is offered at no additional cost to the consumer. This list is not exhaustive: the app will not render the harmonised label until every condition it attaches to is confirmed.</p>
+
+<h3>What is the legal guarantee notice, and how is it different from the label?</h3>
+<p>The notice is the reminder of the legal guarantee of conformity, including its minimum duration of two years. It is the broader obligation: it is not conditional on any offer by the trader, so it applies to every trader selling goods to EU consumers. The label is narrower. It arises only where the producer offers a commercial guarantee of durability at no additional cost, covering the entire good, and lasting more than two years. In short: the notice applies to everyone; the label applies only where that extra producer guarantee is actually offered.</p>
+
+<h3>What does the repairability block show?</h3>
+<p>Repair score and spare-parts availability, where you have supplied them, plus a separate, plainly labelled "guarantee terms" link to your own guarantee page. That link is rendered outside the harmonised label as ordinary text; your guarantee URL is never encoded into the label artwork itself.</p>
+</section>
+
+<section class="faq-section" id="gpsr">
+<h2>Product safety (GPSR)</h2>
+
+<h3>What goes into a safety profile?</h3>
+<p>The manufacturer's name, address and email; the EU responsible person's details where the manufacturer is not established in the EU; and warning text you supply per language. Product type and identifier (such as SKU) come from the product itself, not the profile.</p>
+
+<h3>What language do safety warnings appear in?</h3>
+<p>You enter warning text once per language on the safety profile. A shopper sees, in order: the warning in their own selected language if you supplied one; otherwise your shop's default language, if supplied; otherwise English, if supplied; otherwise whichever language you entered first. The app never machine-translates a warning; it only ever shows the exact text you typed for a given language. If none was supplied at all, the section does not show.</p>
+
+<h3>What if a product is missing required information?</h3>
+<p>The safety block renders whichever fields are present and simply omits any that are empty; it never shows an empty heading with nothing underneath. In the admin, assigned products that are missing product type or identifying data are flagged with a gap indicator so you can see and fix it.</p>
+</section>
+
+<section class="faq-section" id="withdrawal">
+<h2>The withdrawal function</h2>
+
+<h3>What does a shopper see?</h3>
+<p>A withdrawal link, shown as an app embed on your storefront. Clicking it opens a form asking for exactly three things: name, order reference and email. The next page restates the declaration for review and asks for an explicit "confirm withdrawal" action. After confirming, the shopper sees an on-screen confirmation with the date and time, and receives an acknowledgement email.</p>
+
+<h3>What do I see as the merchant?</h3>
+<p>A Withdrawals page listing each declaration with its status (received or processed) and acknowledgement-email status, with timestamps shown in your shop's own timezone. You can export the list as CSV on any plan. An audit PDF export is also available, gated to the Pro plan.</p>
+
+<h3>Does the app issue refunds or cancel orders?</h3>
+<p>No. It records the withdrawal declaration, matches it to an order where possible, notifies you, and sends the shopper a receipt-only acknowledgement email confirming the declaration was received. Processing the withdrawal, including any refund, is something you do yourself.</p>
+</section>
+
+<section class="faq-section" id="plans">
+<h2>Plans</h2>
+
+<h3>What is in each plan?</h3>
+<ul>
+<li><strong>Free:</strong> the withdrawal function and harmonised guarantee labels, capped at 10 distinct products carrying any compliance profile.</li>
+<li><strong>Growth ($9.99/month or $99.90/year):</strong> everything in Free, plus GPSR product safety information, and the 10-product cap is removed.</li>
+<li><strong>Pro ($19.99/month or $199.90/year):</strong> everything in Growth, plus the banned-claims scanner and the audit PDF export.</li>
+</ul>
+<p>Paid plans are billed through Shopify.</p>
+
+<h3>What is the banned-claims scanner?</h3>
+<p>A Pro-plan tool that automatically flags environmental marketing language in your product copy, such as unproven "eco-friendly" or "sustainable" claims and unsubstantiated carbon-offset claims, against the points inserted into Annex I of Directive 2005/29/EC by Directive (EU) 2024/825. It is automated flagging to help you review your own copy. It is not legal advice, and it does not make a final legal determination.</p>
+</section>
+
+<section class="faq-section" id="data">
+<h2>Data and privacy</h2>
+
+<h3>What data does the app process?</h3>
+<p>Shop-level data needed to run the app and bill through Shopify, plus, only when a shopper submits the withdrawal form, their name, email address and order reference. The app does not sell data or use it for advertising. Full details are in our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
+
+<h3>What happens to the data if I uninstall?</h3>
+<p>The app honors Shopify's shop redaction webhook and deletes shop data accordingly after uninstall, as described in the <a href="privacy.html">Privacy Policy</a>.</p>
+</section>
+
+<section class="faq-section" id="help">
+<h2>Getting help</h2>
+
+<h3>How do I get help?</h3>
+<p>Email <a href="mailto:support@tuxpawlabs.com">support@tuxpawlabs.com</a>. We aim to respond within two business days. Please include your shop domain and, for withdrawal questions, the order reference, and do not include shopper personal data beyond what is needed. The app also has its own Help and support page, reachable from the app navigation. See the full <a href="support.html">Support</a> page for details.</p>
+</section>
+
+</article>
+</main>
+<footer>
+  <div class="foot">
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <div class="legal">TUXPAW LLC &middot; This app helps you display required information. It is not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>
