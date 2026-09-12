@@ -81,6 +81,16 @@ header {
   border-radius: 8px;
 }
 .btn:hover { filter: brightness(1.06); }
+/* Sits under the hero CTA. Needs `.hero .cta-note`, not `.cta-note`: the
+   existing `.hero p` rule is more specific than a bare class and would
+   otherwise win on font-size and margin. */
+.hero .cta-note {
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  max-width: 560px;
+}
 .deadline {
   background: var(--coral);
   color: #fff;
