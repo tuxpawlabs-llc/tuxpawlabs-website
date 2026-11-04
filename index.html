@@ -8,6 +8,12 @@
 <link rel="icon" href="assets/tuxpaw-favicon.ico">
 <link rel="apple-touch-icon" href="assets/tuxpaw-icon-192.png">
 <link rel="stylesheet" href="style.css">
+<!-- BF-STRIP start: Black Friday strip, remove on 2026-12-01 (also hides itself from that date) -->
+<style>
+  .promo-strip { background: var(--midnight); text-align: center; padding: 0.55rem 16px; font-size: 0.95rem; line-height: 1.4; }
+  .promo-strip a { color: var(--ivory); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+<!-- BF-STRIP end -->
 </head>
 <body>
 <header>
@@ -21,6 +27,10 @@
     </nav>
   </div>
 </header>
+<!-- BF-STRIP start -->
+<div class="promo-strip" id="bf-strip"><a href="black-friday-lowest-price.html">Running a Black Friday sale for EU shoppers? Check the 30-day lowest price rule first.</a></div>
+<script>if (Date.now() >= Date.parse("2026-12-01T00:00:00Z")) { var bf = document.getElementById("bf-strip"); if (bf) bf.remove(); }</script>
+<!-- BF-STRIP end -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
