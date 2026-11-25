@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy: AVS & CVV Risk Details - TuxPaw Labs</title>
+<meta name="description" content="Privacy policy for the TuxPaw: AVS & CVV Risk Details Shopify app.">
+<link rel="icon" href="assets/tuxpaw-favicon.ico">
+<link rel="apple-touch-icon" href="assets/tuxpaw-icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><img src="assets/tuxpaw-primary-horizontal-dark.png" alt="TuxPaw Labs"></a>
+    <nav>
+      <a href="faq.html">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+<main>
+<article>
+<h1>Privacy Policy</h1>
+<p>TUXPAW LLC ("TuxPaw", "we") · TuxPaw: AVS &amp; CVV Risk Details, a Shopify app</p>
+<p>Last updated: 25 November 2026</p>
+<h2>Who we are</h2>
+<p>TUXPAW LLC, Florida, USA. We make the Shopify app "TuxPaw: AVS &amp; CVV Risk Details" (the app). Contact: support@tuxpawlabs.com.</p>
+<h2>What the app does</h2>
+<p>The app adds one block to the order page in your Shopify admin. The block shows payment details that Shopify already holds for that order, such as the AVS result, the CVV result, the card issuer and the customer IP address, with a plain-language meaning for each code. It does not decide anything about the order. It is not fraud advice.</p>
+<h2>What data the app reads</h2>
+<p>When you open an order, the block asks Shopify for these fields of that one order, and shows them to you:</p>
+<ul>
+<li>The customer's IP address (Shopify's <code>clientIp</code> field).</li>
+<li>For each payment transaction on the order: its type (for example authorization, sale, capture), its status, the payment gateway name, and the time it was created.</li>
+<li>For card payments only: the AVS result code, the CVV result code, the card issuer name, the card's BIN (the first digits that identify the issuer), the card number as Shopify returns it (Shopify returns only the last digits), and the wallet name if a wallet such as Apple Pay was used.</li>
+</ul>
+<p>The app asks for nothing else. In particular it does not read the shopper's name, email address, postal address or phone number.</p>
+<p>The reason is simple: these are the details the block exists to display.</p>
+<h2>Where the data goes</h2>
+<p>The request goes from your browser, inside the Shopify admin, to Shopify's own Admin API. The block sends no request to any other address, and none to any server of ours. The answer is shown on the order page and then gone when you leave the page.</p>
+<p>The one server we run is separate from the block and is described below. It receives only calls from Shopify's compliance webhooks.</p>
+<h2>What we do not do</h2>
+<ul>
+<li>We do not store any order or customer data. The app has no database. The only record we create is the hosting log line described below.</li>
+<li>We do not receive your order data. The block sends nothing to us. The only requests that reach our server are Shopify's three compliance webhooks, described below.</li>
+<li>We do not set cookies and we do not use local storage or similar browser storage.</li>
+<li>We do not use analytics or tracking.</li>
+<li>We do not sell or share data, and we do not use it for advertising or profiling.</li>
+<li>We do not send emails and we do not write anything back to your shop (no metafields, no order changes).</li>
+</ul>
+<h2>Shopify's compliance webhooks</h2>
+<p>Shopify requires every app distributed through the Shopify App Store to subscribe to three compliance webhooks. The app subscribes to them (<code>customers/data_request</code>, <code>customers/redact</code> and <code>shop/redact</code>), and we run one small service that receives them. It is hosted on Railway.</p>
+<p>What Shopify sends, according to Shopify's documentation (https://shopify.dev/docs/apps/build/compliance/privacy-law-compliance , read 2026-11-23):</p>
+<ul>
+<li><code>customers/data_request</code>: the shop ID and shop domain, a list of order IDs, the customer's ID, email and phone number, and the ID of the data request. Shopify's page does not say when it is sent.</li>
+<li><code>customers/redact</code>: the shop ID and shop domain, the customer's ID, email and phone number, and a list of order IDs. Shopify sends it 5 days after the customer's deletion request. If the customer is a scheduled gift card recipient, Shopify holds it back until the gift card is delivered.</li>
+<li><code>shop/redact</code>: the shop ID and shop domain. Shopify sends it 48 hours after a store owner uninstalls the app.</li>
+</ul>
+<p>What the service does with each request, whatever the topic:</p>
+<ul>
+<li>It checks the signature in the <code>X-Shopify-Hmac-Sha256</code> header against the exact request body, using the app's secret. A missing or invalid signature gets the answer 401 and nothing more happens. A body over 1 MiB gets 413.</li>
+<li>A valid request gets the answer 200. The service does not read the body as data: it does not parse it and does not look at the customer fields.</li>
+<li>The customer fields in the body (ID, email, phone) do reach our server as part of the request. They are held in memory only while the request is handled, to check the signature, and are discarded when it ends. They are never logged or stored.</li>
+<li>It has no database and writes no files. For a verified request it writes one line to the hosting log with the topic, the shop domain and the outcome (accepted). For a rejected request it writes only the reason (bad signature, body too large, or an error). It never writes the body, the signature or the secret.</li>
+</ul>
+<p>Because the app holds no customer data, a data request has nothing to export and a redact request has nothing to erase. The service only acknowledges. Shopify's page says the action must be completed within 30 days; there is nothing to complete.</p>
+<h2>Logs on our hosting provider</h2>
+<p>The one line described above goes to the hosting log on Railway. Our Railway account is on the Hobby plan, for which Railway's documentation gives 7 days of log retention (https://docs.railway.com/observability/logs , read 2026-11-23).</p>
+<p>Railway also records HTTP request logs at its edge for requests to a service. According to the same page these include the request path, method, host, response status, the sender's user agent and source IP address, timestamps and sizes. Railway records these, not our code. For the compliance webhooks the sender is Shopify's system, not a shopper.</p>
+<h2>Who can see it</h2>
+<p>The block is shown only on the order page inside the Shopify admin, to staff who can open that order. Nothing is shown on your storefront or to your shoppers.</p>
+<h2>Permission the app requests</h2>
+<p><code>read_orders</code>. Shopify requires it so the app can read the order fields listed above. The app only reads; it never changes an order.</p>
+<p>Shopify treats the customer IP address and card payment details as protected customer data. If Shopify has not allowed the app to read them, the block shows a message saying so instead of the details.</p>
+<h2>Languages</h2>
+<p>The block is available in English and German.</p>
+<h2>Shopper rights (access, correction, deletion)</h2>
+<p>We store no personal data about shoppers or merchants' customers, so there is nothing for us to export, correct or erase. (Customer details in Shopify's compliance webhooks reach our server in the request and are discarded when it ends, as described above.) The order data the block displays belongs to your shop and stays in Shopify, under Shopify's own policies. A shopper who wants access to or deletion of their order data should ask the merchant of the shop where they ordered, or see Shopify's privacy information.</p>
+<p>The app subscribes to Shopify's customer data request, customer redaction and shop redaction webhooks. Our receiver verifies and acknowledges each one and does nothing else, because there is no data to act on (see "Shopify's compliance webhooks").</p>
+<p>If you write to us, we will read your email and may keep it to answer you (see "Contact").</p>
+<h2>Retention</h2>
+<p>We keep no order data, so there is nothing to retain or delete. Shopify keeps the order data under its own policies. The hosting log line and Railway's request logs are kept by Railway for the period its plan gives (see "Logs on our hosting provider").</p>
+<h2>Changes to this policy</h2>
+<p>If the app changes in a way that affects what is described here, we will update this page and the "Last updated" date before the change goes live.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: support@tuxpawlabs.com · TUXPAW LLC, Florida, USA</p>
+<p>When you email us, we receive your email address and what you write. We use it only to reply to you.</p>
+</article>
+</main>
+<footer>
+  <div class="foot">
+    <a href="eu-rules-2026.html">EU rules 2026</a>
+    <a href="black-friday-lowest-price.html">Black Friday prices</a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <div class="legal">TUXPAW LLC · Apps for Shopify merchants.</div>
+  </div>
+</footer>
+</body>
+</html>

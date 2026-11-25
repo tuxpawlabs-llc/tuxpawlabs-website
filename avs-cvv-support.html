@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support: AVS & CVV Risk Details - TuxPaw Labs</title>
+<meta name="description" content="Support for the TuxPaw: AVS & CVV Risk Details Shopify app.">
+<link rel="icon" href="assets/tuxpaw-favicon.ico">
+<link rel="apple-touch-icon" href="assets/tuxpaw-icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html"><img src="assets/tuxpaw-primary-horizontal-dark.png" alt="TuxPaw Labs"></a>
+    <nav>
+      <a href="faq.html">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+<main>
+<article>
+<h1>Support: TuxPaw AVS &amp; CVV Risk Details</h1>
+<p>Email support@tuxpawlabs.com. We read every message and reply by email.</p>
+<p>Please include your shop domain (the .myshopify.com address), what you expected to see, and what you saw. Do not send card numbers or other customer personal data. A description or a screenshot with details hidden is enough.</p>
+<h2>What the app shows</h2>
+<p>On the order page in your Shopify admin, one block called "AVS &amp; CVV risk details" shows, for that order:</p>
+<ul>
+<li>The AVS result, with a plain-language meaning.</li>
+<li>The CVV result, with a plain-language meaning.</li>
+<li>The card issuer, BIN, last digits, wallet if any, and the payment gateway.</li>
+<li>The customer IP address.</li>
+<li>The time and type of the main card transaction. Other card transactions on the order (for example a capture or a refund) are listed in one short line.</li>
+</ul>
+<p>The data is read from Shopify when you open the order. The block ends with the line "Shows data Shopify already holds for this order. Not fraud advice."</p>
+<h2>Install and add the block</h2>
+<ol>
+<li>Install the app from the Shopify App Store.</li>
+<li>Open any order in your Shopify admin.</li>
+<li>In the <strong>Blocks</strong> section of the order page, click <strong>+ Block</strong>, choose <strong>AVS &amp; CVV risk details</strong>, then pin it so it stays on every order.</li>
+</ol>
+<p>Only staff who can open the order see the block.</p>
+<h2>What the AVS and CVV letters mean</h2>
+<p>The block spells it out next to each result, for example "Y: Street address and 5-digit postal code match." Open an order and read the line under AVS or CVV. A code the app does not recognise is shown as "Code X (not recognised)".</p>
+<h2>Common questions</h2>
+<p><strong>Why is AVS or CVV empty ("Shopify did not return a result")?</strong>
+Shopify did not return a code for that transaction. Some payment gateways and test gateways return no AVS or CVV result.</p>
+<p><strong>Why does it say "No card details for this order"?</strong>
+The order has no card transaction, for example it was paid with PayPal, manually, or with a gift card.</p>
+<p><strong>The block shows an error saying Shopify did not allow the app to read the details.</strong>
+Shopify controls access to customer IP addresses and card payment details. The block says so when Shopify refuses. Email us with your shop domain and we will look into it.</p>
+<p><strong>Does it block orders or score fraud?</strong>
+No. It only shows what Shopify holds. It does not approve, cancel, hold or score orders and it is not fraud advice.</p>
+<p><strong>Does it store my data?</strong>
+No. The block stores nothing, has no database, sets no cookies and sends nothing to us. The only server we run is a small receiver for Shopify's three required compliance webhooks. It verifies Shopify's signature, stores nothing, and writes only the topic, your shop domain and the outcome to its hosting log. See the privacy policy.</p>
+<p><strong>Which languages are available?</strong>
+English and German.</p>
+<h2>What the app does not do</h2>
+<ul>
+<li>No fraud scoring or decisions.</li>
+<li>No changes to your orders, no metafields, no emails.</li>
+<li>No storage of order or customer data.</li>
+<li>No block on your storefront or anything visible to your shoppers.</li>
+</ul>
+<h2>Contact</h2>
+<p>support@tuxpawlabs.com · TUXPAW LLC, Florida, USA</p>
+</article>
+</main>
+<footer>
+  <div class="foot">
+    <a href="eu-rules-2026.html">EU rules 2026</a>
+    <a href="black-friday-lowest-price.html">Black Friday prices</a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <div class="legal">TUXPAW LLC · Apps for Shopify merchants.</div>
+  </div>
+</footer>
+</body>
+</html>
